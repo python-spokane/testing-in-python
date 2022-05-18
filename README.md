@@ -31,5 +31,5 @@ pip install -r requirements.txt
 ### Generate Slides
 ```bash
 # See here to install marp: https://github.com/marp-team/marp-cli
-marp --watch --html slides.md
+marp --watch --html -o index.html slides.md
 ```
