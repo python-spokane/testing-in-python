@@ -1,5 +1,5 @@
 ---
-title: "Journey to the Pythonic Peak 🗻"
+title: "🧪 Testing in Python 🐍"
 marp: true
 html: true
 theme: gaia
@@ -36,7 +36,7 @@ Joe Riddle
 ---
 
 <!-- _class: lead -->
-Testing is the act of verifying that the code you write runs the way you expect it to.
+Testing is the <mark>act of verifying that the code you write runs the way you expect it to.</mark>
 
 ---
 
@@ -54,52 +54,82 @@ Testing is the act of verifying that the code you write runs the way you expect 
 
 ---
 
+<style scoped>
+img {
+  border-radius: 1000000px;
+}
+</style>
+
+<!-- _class: lead -->
+# [https://spokanepython.com/](https://spokanepython.com/) 
+
+![width:200px height:200px](https://spokanepython.com/img/stan.jpg)
+
+---
+
 # The **[Kevin Bost](https://github.com/Keboo)** Slide
   - Think about what you're testing and why
   - Naming, Naming, Naming
 
 ---
 
-# Thinking about testing
+# Thinking about Testing
 Questions to ask yourself:
 - Am I testing boiler-plate code (the framework, stdlib, etc.)?
 - Am I testing implementation logic?
+
+<!-- Ask, "What are some other questions to ask yourself when writing tests?" -->
 
 ---
 
 # Naming, Naming, Naming
 - `UnitOfWork_StateUnderTest_ExpectedBehavior`
-
-```python
-def test_
-
-```
-
 - `sut = ...`
 - `actual = ...`
 - Arrange, Act, Assert
 
 ---
 
-# How to write readable tests
-
----
-
-## `unittest`
-- writing a unit test using `unittest`
+# unittest
 - Class style tests
+- Writing a unit test using `unittest`:
+```python
+import unittest
+
+class TestAdd(unittest.TestCase):
+  def test_add():
+    self.assertEqual(2 + 2, 4)
+
+```
+```bash
+$ python -m unittest
+```
 
 ---
 
-## `pytest`
-- function style tests
-- writing a unit test using `pytest`
+# pytest
+- Function style tests
 - fixtures
-- pytest extensions
+- [plugins](https://docs.pytest.org/en/7.1.x/reference/plugin_list.html#plugin-list)
 - marks
 - CLI options
-  - verbose
 - debugging with VS Code
+
+---
+
+# pytest
+- writing a unit test using `pytest`:
+```python
+import pytest
+
+def test_add():
+    assert 2 + 2 == 4
+
+```
+
+```bash
+$ python -m pytest
+```
 
 ---
 

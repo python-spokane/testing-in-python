@@ -6,7 +6,7 @@ import requests
 API_BASE = "https://swapi.dev/api/"
 
 
-def list_people() -> list[str]:
+def list_people() -> dict:
     response = requests.get(f"{API_BASE}people")
     return json.loads(response.text)
 
